@@ -1,0 +1,235 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.4s ease;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  --secondary-gradient: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  --accent-color: #7dc4ff;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --dark-bg: #0b1120;
+  --code-bg: #1e293b;
+  --border-radius: 1rem;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --glass-blur: blur(16px);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+}
+
+/* Layout */
+main {
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+  border-radius: var(--border-radius);
+  background: var(--secondary-gradient);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Left Panel */
+main .left {
+  position: relative;
+}
+
+.left .code,
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: var(--code-bg);
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  padding: 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+}
+
+/* Review Button */
+main .left .review {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--primary-gradient);
+  color: white;
+  padding: 0.8rem 2.5rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(38, 38, 38, 0.3);
+}
+
+main .left .review:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(38, 38, 38, 0.4);
+}
+
+main .left .review:active {
+  transform: translateY(2px) scale(0.98);
+}
+
+/* Right Panel */
+main .right {
+  background: var(--secondary-gradient);
+  padding: 2rem 2.5rem;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  overflow-y: auto;
+  backdrop-filter: var(--glass-blur);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5aa8ff;
+}
+
+/* Code Highlighting */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #64748b;
+}
+
+.token.punctuation {
+  color: #e2e8f0;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #fbbf24;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #34d399;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #c084fc;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #60a5fa;
+}
+
+.token.function,
+.token.class-name {
+  color: #fb7185;
+}
+.loader {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  text-align: center;
+  margin-top: 2rem;
+}
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  main .left,
+  main .right {
+    height: auto;
+    min-height: 450px;
+  }
+
+  main .left .review {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.9rem;
+    padding: 0.7rem 2rem;
+  }
+}
