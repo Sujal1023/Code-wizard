@@ -1,21 +1,19 @@
-🧙‍♂️ Code Wizard
-Code Wizard is an elegant and AI-powered code review web application built with React. It lets developers paste code, get instant reviews from an AI model, and visualize the feedback in a beautifully styled interface. Perfect for improving code quality quickly and interactively.
+Code Wizard
+AI-Powered Code Review Web Application
 
-📸 Demo
-<img width="1440" alt="Screenshot 2025-04-29 at 7 38 43 AM" src="https://github.com/user-attachments/assets/7479a3ad-c764-4656-a77d-af393442b2b6" />
-
+Code Wizard is an elegant and AI-powered code review web application built with React. It allows developers to paste code, receive instant reviews from an AI model, and visualize feedback in a beautifully styled interface. It's perfect for improving code quality quickly and interactively.
 
 🚀 Features
-⚡ Live code editing with syntax highlighting (powered by react-simple-code-editor and prismjs)
+Live Code Editing: Real-time code editing with syntax highlighting powered by react-simple-code-editor and prismjs.
 
-🤖 AI-based code review using an external backend API
+AI-Based Code Review: Instant code analysis using an external backend AI API.
 
-📱 Fully responsive across devices
+Responsive Design: Fully responsive interface compatible with various devices.
 
-✨ Highlighted markdown feedback using react-markdown and rehype-highlight
+Markdown Feedback Rendering: Highlighted markdown feedback using react-markdown and rehype-highlight.
 
-📦 Tech Stack
-Frontend: React, PrismJS, Tailwind-like modern CSS
+🛠️ Tech Stack
+Frontend: React, Tailwind-like modern CSS
 
 Code Editor: react-simple-code-editor
 
@@ -23,56 +21,101 @@ Syntax Highlighting: prismjs, highlight.js
 
 Markdown Rendering: react-markdown, rehype-highlight
 
-AI Review API: Axios to communicate with a local or cloud-based AI server
+API Communication: Axios for interacting with a local or cloud-based AI server
 
 📁 Folder Structure
-bash
+css
 Copy
 Edit
-/public
-/src
-  ├── App.jsx
-  ├── index.css
-  ├── main.jsx
-  ├── App.css
+Code-wizard/
+├── public/
+├── src/
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+├── BackEnd/
+│   └── [Backend files and modules]
+├── Frontend/
+│   └── [Frontend files and modules]
+├── README.md
+└── package.json
 ⚙️ Getting Started
-1. Clone the repository
+Prerequisites
+Ensure you have the following installed:
+
+Node.js (v14 or higher)
+
+npm (v6 or higher)
+
+Installation
+Clone the Repository
+
 bash
 Copy
 Edit
 git clone https://github.com/Sujal1023/Code-wizard.git
 cd Code-wizard
-2. Install dependencies
+Install Dependencies
+
 bash
 Copy
 Edit
 npm install
-3. Run the app
+Start the Application
+
 bash
 Copy
 Edit
 npm run dev
-App will be live at http://localhost:5173
+The application will be accessible at http://localhost:5173.
 
-🌐 API Setup
-Make sure your AI backend is running at http://localhost:3000/ai/get-review.
+Backend Setup
+If your project includes a backend:
 
-If needed, you can mock or replace it with your own API logic.
+Navigate to the BackEnd directory:
 
-📄 Example Code Snippet
-javascript
+bash
 Copy
 Edit
-function sum() {
-  return 1 + 1;
-}
-🧠 AI Review Sample Output
-✅ Your function is simple and correct.
-🛠 Consider adding parameter support and type safety.
+cd BackEnd
+Install backend dependencies:
 
-🤝 Contribution
-Contributions, suggestions, and stars are welcome! Feel free to fork and submit pull requests.
+bash
+Copy
+Edit
+npm install
+Start the backend server:
 
-📃 License
-MIT License © Sujal1023
+bash
+Copy
+Edit
+npm run start
+Ensure the backend server is running before using the frontend application.
+
+🧪 Usage
+Open the application in your browser at http://localhost:5173.
+
+Paste your code into the editor.
+
+Click the "Review" button to receive AI-generated feedback.
+
+Review the feedback displayed below the editor.
+
+📸 Screenshots
+<img width="1440" alt="Screenshot 2025-04-29 at 7 38 43 AM" src="https://github.com/user-attachments/assets/7479a3ad-c764-4656-a77d-af393442b2b6" />
+
+Note: Replace the above link with the actual path to your screenshot image.
+
+📝 License
+This project is licensed under the MIT License.
+
+🙏 Acknowledgements
+react-simple-code-editor
+
+prismjs
+
+react-markdown
+
+rehype-highlight
 
